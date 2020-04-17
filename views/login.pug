@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1 Login
+    h2 Login
     if errors != undefined && errors.length != 0
         each error in errors
             div(role='alert' id='a1') #{error.msg}
@@ -11,7 +11,8 @@ block content
         div(role='alert' id='a3') #{error_msg}
     if error != ''
         div(role='alert' id='a4') #{error}
-    form(id='myforml' action='/users/login' method='post')
+    
+    form(action='/users/login' method='post').shadow
         table
             tr
                 td Email:
